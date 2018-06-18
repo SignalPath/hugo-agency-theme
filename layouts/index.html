@@ -11,6 +11,10 @@
       {{ partial "services.html" . }}
     {{ end }}
 
+    {{ if .Site.Params.features.enable }}
+      {{ partial "features.html" . }}
+    {{ end }}
+
     {{ if .Site.Params.portfolio.enable }}
       {{ partial "portfolio.html" . }}
     {{ end }}
@@ -37,6 +41,10 @@
 
     {{ if .Site.Params.portfolio.enable }}
       {{ partial "modals.html" . }}
+    {{ end }}
+
+    {{ if .Site.Params.features.enable }}
+      {{ partial "feature.html" . }}
     {{ end }}
 
     {{ partial "js.html" . }}

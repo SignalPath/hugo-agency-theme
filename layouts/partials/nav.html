@@ -41,6 +41,12 @@
           </li>
         {{ end }}
 
+        {{ if .Site.Params.features.enable }}
+          <li>
+            <a class="page-scroll" href="{{ .Site.BaseURL }}#features">{{ with .Site.Params.navigation.features }}{{ . }}{{ end }}</a>
+          </li>
+        {{ end }}
+
         {{ if .Site.Params.portfolio.enable }}
           <li>
             <a class="page-scroll" href="{{ .Site.BaseURL }}#portfolio">{{ with .Site.Params.navigation.portfolio }}{{ . }}{{ end }}</a>
