@@ -1,0 +1,27 @@
+{{ "<!-- teambio Modals -->" | safeHTML }}
+{{ range .Site.Params.team.members }}
+  <div class="teambio-modal modal fade" id="teambioModal{{ .modalID }}" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2">
+            <div class="modal-body">
+              <h2>{{ .name  | markdownify }}</h2>
+              <p class="item-intro text-muted">{{ .position | markdownify }}</p>
+              {{ $url := printf "images/team/%s" .img }}
+              <img class="img-responsive img-centered" src="{{ $url | absURL }}" alt="">
+              <p>{{ .bio | markdownify }}</p>
+              <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> {{ with $.Site.Params.feature.modal.buttonText }}{{ . }}{{ end }}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{{ end }}

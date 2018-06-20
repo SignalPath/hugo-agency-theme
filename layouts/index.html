@@ -25,6 +25,7 @@
 
     {{ if .Site.Params.team.enable }}
       {{ partial "team.html" . }}
+      {{ partial "teambio.html" . }}
     {{ end }}
 
     {{ if .Site.Params.clients_list.enable }}
